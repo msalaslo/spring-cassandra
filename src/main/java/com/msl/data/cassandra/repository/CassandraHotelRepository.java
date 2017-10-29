@@ -1,8 +1,9 @@
-package cass.repository;
+package com.msl.data.cassandra.repository;
 
-import cass.domain.Hotel;
 import com.datastax.driver.core.querybuilder.QueryBuilder;
 import com.datastax.driver.core.querybuilder.Select;
+import com.msl.data.cassandra.domain.Hotel;
+
 import org.springframework.data.cassandra.core.CassandraOperations;
 import org.springframework.stereotype.Repository;
 
@@ -43,5 +44,10 @@ public class CassandraHotelRepository implements HotelRepository {
         Select select = QueryBuilder.select().from("hotels_by_state");
         select.where(QueryBuilder.eq("state", state));
         return this.cassandraTemplate.select(select, Hotel.class);
+    }
+    
+    @Override
+    public List<Hotel> findAll(){
+        return this.cassandraTemplate.selectAll(Hotel.class);
     }
 }

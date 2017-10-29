@@ -1,4 +1,4 @@
-package cass.domain;
+package com.msl.data.cassandra.domain;
 
 import org.springframework.cassandra.core.Ordering;
 import org.springframework.cassandra.core.PrimaryKeyType;

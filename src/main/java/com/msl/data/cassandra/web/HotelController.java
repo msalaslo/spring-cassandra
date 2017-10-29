@@ -1,12 +1,13 @@
-package cass.web;
+package com.msl.data.cassandra.web;
 
-import cass.domain.Hotel;
-import cass.domain.HotelByLetter;
-import cass.service.HotelService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import com.msl.data.cassandra.domain.Hotel;
+import com.msl.data.cassandra.domain.HotelByLetter;
+import com.msl.data.cassandra.service.HotelService;
 
 import java.util.List;
 import java.util.UUID;
@@ -53,5 +54,10 @@ public class HotelController {
     @GetMapping(path = "/fromstate/{state}")
     public List<Hotel> findHotelsInState(@PathVariable("state") String state) {
         return this.hotelService.findHotelsInState(state);
+    }
+    
+    @GetMapping(path = "/findhotels")
+    public List<Hotel> findHotels() {
+        return this.hotelService.findHotels();
     }
 }

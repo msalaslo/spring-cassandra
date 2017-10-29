@@ -1,12 +1,12 @@
-package cass.service;
-
-import cass.domain.Hotel;
-import cass.domain.HotelByLetter;
-import cass.repository.HotelByLetterRepository;
-import cass.repository.HotelRepository;
+package com.msl.data.cassandra.service;
 
 import java.util.List;
 import java.util.UUID;
+
+import com.msl.data.cassandra.domain.Hotel;
+import com.msl.data.cassandra.domain.HotelByLetter;
+import com.msl.data.cassandra.repository.HotelByLetterRepository;
+import com.msl.data.cassandra.repository.HotelRepository;
 
 public class HotelServiceImpl implements HotelService {
 
@@ -64,5 +64,10 @@ public class HotelServiceImpl implements HotelService {
     @Override
     public List<Hotel> findHotelsInState(String state) {
         return this.hotelRepository.findByState(state);
+    }
+    
+    @Override
+    public List<Hotel> findHotels() {
+        return this.hotelRepository.findAll();
     }
 }

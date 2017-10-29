@@ -1,11 +1,12 @@
-package cass.config;
+package com.msl.data.cassandra.config;
 
-import cass.repository.HotelByLetterRepository;
-import cass.repository.HotelRepository;
-import cass.service.HotelService;
-import cass.service.HotelServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
+import com.msl.data.cassandra.repository.HotelByLetterRepository;
+import com.msl.data.cassandra.repository.HotelRepository;
+import com.msl.data.cassandra.service.HotelService;
+import com.msl.data.cassandra.service.HotelServiceImpl;
 
 @Configuration
 public class RootConfiguration {
