@@ -6,7 +6,7 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 
 jar {
-	baseName = 'spring-cassandra'
+	baseName = 'spring-data-cassandra'
 	version = '0.0.1-SNAPSHOT'
 }
 sourceCompatibility = 1.8
